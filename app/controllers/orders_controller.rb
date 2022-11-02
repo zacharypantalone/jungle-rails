@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-
+  
   def show
     @order = Order.find(params[:id])
     @order_subtotal_cents = @order.line_items.map {|entry| entry.total_price_cents}.sum
