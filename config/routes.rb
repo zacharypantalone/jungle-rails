@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get "register", to: "register#new"
   post "register", to: "register#create"
   get "signin", to: "signin#show"
+  post "signin", to: "signin#create"
 
   
   

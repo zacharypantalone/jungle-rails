@@ -39,16 +39,25 @@
               <%= link_to category.name, category, class: "nav-link" %>
             </li>
             <% end %>
+
             <li class="nav-item">
             <%= link_to "about", "/about", class: "nav-link" %>
           </li>
+          <% if Current.user %>
+
+            <li class="nav-item">
+            <%= link_to "log-out", "/", class: "nav-link" %>
+          </li>
+
+          <% else %>
            
             <li class="nav-item">
-            <%= link_to "signin", "/signin", class: "nav-link" %>
+            <%= link_to "sign-in", "/signin", class: "nav-link" %>
           </li>
             <li class="nav-item">
             <%= link_to "register", "/register", class: "nav-link" %>
           </li>
+          <% end %>
           <%# </ul>
         </li> %>
       </ul>
