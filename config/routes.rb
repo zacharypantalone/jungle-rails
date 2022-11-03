@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   
   get "about", to: "about#index"
   get "register", to: "register#show"
+  get "signin", to: "signin#show"
 
   
   
