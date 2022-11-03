@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   end
   
   get "about", to: "about#index"
+  get "register", to: "register#show"
 
   
   
