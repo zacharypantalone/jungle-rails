@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   post "register", to: "register#create"
   get "signin", to: "signin#show"
   post "signin", to: "signin#create"
+  delete 'logout', to: 'signin#destroy'
 
   
   

@@ -17,7 +17,13 @@ class SigninController < ApplicationController
 
   end
 
-  
+  def destroy
+    session[:user_id] = nil
+    redirect_to root_path, notice: 'Logged Out'
+
+  end
+
+
 
   private
 
