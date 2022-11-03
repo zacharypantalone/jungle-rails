@@ -19,7 +19,8 @@ Rails.application.routes.draw do
   end
   
   get "about", to: "about#index"
-  get "register", to: "register#show"
+  get "register", to: "register#new"
+  post "register", to: "register#create"
   get "signin", to: "signin#show"
 
   
