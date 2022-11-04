@@ -16,6 +16,7 @@ class Admin::ProductsController < ApplicationController
     else
       render :new
     end
+
   end
 
   def destroy
@@ -36,5 +37,5 @@ class Admin::ProductsController < ApplicationController
       :price
     )
   end
-
+  
 end

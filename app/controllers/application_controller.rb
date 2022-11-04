@@ -14,26 +14,25 @@ class ApplicationController < ActionController::Base
   def enhanced_cart
     @enhanced_cart ||= Product.where(id: cart.keys).map {|product| { product:product, quantity: cart[product.id.to_s] } }
   end
+
   helper_method :enhanced_cart
 
-  
   def cart_subtotal_cents
     enhanced_cart.map {|entry| entry[:product].price_cents * entry[:quantity]}.sum
   end
-  helper_method :cart_subtotal_cents
 
+  helper_method :cart_subtotal_cents
   before_action :set_current_user
+
   def set_current_user
     
     Current.user = User.find_by(id: session[:user_id]) if session[:user_id]
   end
+
   def require_user_logged_in!
     
     redirect_to sign_in_path, alert: 'You must be signed in' if Current.user.nil?
   end
-
-
-
 
   def update_cart(new_cart)
     cookies[:cart] = {
@@ -42,4 +41,5 @@ class ApplicationController < ActionController::Base
     }
     cookies[:cart]
   end
+
 end

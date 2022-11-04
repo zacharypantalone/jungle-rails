@@ -1,4 +1,5 @@
 class SigninController < ApplicationController
+
   def show
     @signin
   end
@@ -23,8 +24,6 @@ class SigninController < ApplicationController
 
   end
 
-
-
   private
 
   def signin_params
@@ -33,4 +32,5 @@ class SigninController < ApplicationController
       :password
     )
   end
+  
 end

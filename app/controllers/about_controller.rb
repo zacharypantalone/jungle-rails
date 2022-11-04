@@ -1,4 +1,5 @@
 class AboutController < ApplicationController
+  
   def index
     @about_us = "Welcome to the jungle, we've got fun and games
     We got everything you want honey, we know the names

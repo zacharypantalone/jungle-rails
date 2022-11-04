@@ -16,6 +16,7 @@ class Admin::CategoriesController < ApplicationController
     else
       render :new
     end
+
   end
 
   
@@ -25,8 +26,6 @@ class Admin::CategoriesController < ApplicationController
   def category_params
     params.require(:category).permit(
       :name,
-      
-    )
+      )
   end
-
 end

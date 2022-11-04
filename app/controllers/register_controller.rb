@@ -1,7 +1,5 @@
 class RegisterController < ApplicationController
 
-
-
   def create
     @register = User.new(register_params)
 
@@ -21,4 +19,5 @@ class RegisterController < ApplicationController
       :password_confirmation
     )
   end
+
 end

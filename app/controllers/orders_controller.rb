@@ -5,20 +5,19 @@ class OrdersController < ApplicationController
     @order_subtotal_cents = @order.line_items.map {|entry| entry.total_price_cents}.sum
   end
     
-      
-    def create
-    charge = perform_stripe_charge
-    order  = create_order(charge)
+  def create
+  charge = perform_stripe_charge
+  order  = create_order(charge)
 
-    if order.valid?
-      empty_cart!
-      redirect_to order, notice: 'Your Order has been placed.'
-    else
-      redirect_to cart_path, flash: { error: order.errors.full_messages.first }
-    end
+  if order.valid?
+    empty_cart!
+    redirect_to order, notice: 'Your Order has been placed.'
+  else
+    redirect_to cart_path, flash: { error: order.errors.full_messages.first }
+  end
 
   rescue Stripe::CardError => e
-    redirect_to cart_path, flash: { error: e.message }
+  redirect_to cart_path, flash: { error: e.message }
   end
 
   private
@@ -58,4 +57,4 @@ class OrdersController < ApplicationController
     order
   end
 
-end
+end        
